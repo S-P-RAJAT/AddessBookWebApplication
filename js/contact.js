@@ -108,7 +108,7 @@ class Contact{
 
     set phone(phone)
     {
-        let phoneRegex = RegExp('^[+]?\\d{0,3} ?\\d{10}$');
+        let phoneRegex = RegExp('^([+]\\d{1,3})? ?\\d{10}$');
         if(phoneRegex.test(phone))
         this._phone = phone;
         else
@@ -131,7 +131,7 @@ class Contact{
 
     toString()
     {
-        return "Id = "+this.id+", FirstName = "+this.firstName+", LastName = "+this.lastName+", Address = "+this.address+
+        return  "FirstName = "+this.firstName+", LastName = "+this.lastName+", Address = "+this.address+
                 ", City = "+this.city+", State = "+this.state+", Zip = "+this.zip+", Phone = "+this.phone+", Email = "+this.email;
     }
 

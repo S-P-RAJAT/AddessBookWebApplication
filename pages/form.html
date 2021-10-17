@@ -20,7 +20,7 @@
         </div>
       </header>
       <div class="form-content">
-        <form class="form" action="#" onreset="resetForm()" onsubmit="save()" autocomplete="off">
+        <form class="form" action="#" onreset="resetForm()" onsubmit="save(event)" autocomplete="off">
             <div class="form-head">
                 <div class="form-head-text">Person Address Form</div>
                     <a href="./home.html" ><img src="../assets/images/cancel.png" class = "form-cancel-img"></a>
@@ -45,7 +45,7 @@
           <div class="row-content-exp">
             <div class="oneRow-content">
             <label class="label text" for="city">City</label>
-            <select class="select-input" required>
+            <select class="select-input"  id = "city" required>
               <option value="" selected disabled hidden>Select City</option>
               <option value="Amaravathi">Amaravathi</option>
               <option value="Hyderabad">Hyderabad</option>
@@ -57,7 +57,7 @@
           </div>
           <div class="oneRow-content">
             <label class="label text" for="state">State</label>
-            <select class="select-input" required>
+            <select class="select-input"  id = "state" required>
               <option value="" selected disabled hidden>Select State</option>
               <option value="Andhra Pradesh">Andhra Pradesh</option>
               <option value="Telanagana">Telanagana</option>
