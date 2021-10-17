@@ -94,11 +94,11 @@ class Contact{
 
     set zip(zip)
     {
-        let zipRegex = RegExp('^[0-9]{3}[ ]?[0-9]{3,}$');
+        let zipRegex = RegExp('^[0-9]{3}[ ]?[0-9]{3}$');
         if(zipRegex.test(zip))
         this._zip = zip;
         else
-        throw 'ZipCode is Invalid'
+        throw 'Zip is Invalid'
     }
 
     get phone()
@@ -108,7 +108,7 @@ class Contact{
 
     set phone(phone)
     {
-        let phoneRegex = RegExp('^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[789]\d{9}|(\d[ -]?){10}\d$');
+        let phoneRegex = RegExp('^[+]?\\d{0,3} ?\\d{10}$');
         if(phoneRegex.test(phone))
         this._phone = phone;
         else
