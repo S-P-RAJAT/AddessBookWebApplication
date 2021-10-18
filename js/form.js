@@ -129,6 +129,7 @@ const save = (event) => {
   let contactData = createContact();
   let jsonObject = JSON.stringify(contactData);
   alert(contactData);
+  createAndUpdateStorage(contactData);
 }
 
 const createContact = () => {
@@ -148,4 +149,16 @@ const createContact = () => {
 const getInputValueById = (id) => {
   let value = document.querySelector(id).value;
   return value;
+}
+function createAndUpdateStorage(contactData){
+  let contactList = JSON.parse(localStorage.getItem("ContactList"));
+
+  if(contactList != undefined){
+      contactList.push(contactData);
+  }
+  else{
+      contactList = [contactData];
+  }
+  alert(contactList.toString());
+  localStorage.setItem("ContactList",JSON.stringify(contactList));
 }
