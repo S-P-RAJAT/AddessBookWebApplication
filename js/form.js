@@ -133,7 +133,16 @@ const save = (event) => {
 }
 
 const createContact = () => {
+  let contactList = JSON.parse(localStorage.getItem("ContactList"));
+  let max = 0;
+  if(contactList){
+      for(const contactData of contactList){
+          if(max<contactData._id)
+          max = contactData._id;
+      }
+  }
   let contactData = new Contact();
+  contactData.id = parseInt(max) + 1;
   let names = getInputValueById('#name').split(" ");
   contactData.firstName = names[0];
   contactData.lastName = names[1];
