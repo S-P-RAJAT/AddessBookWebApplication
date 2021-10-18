@@ -162,3 +162,27 @@ function createAndUpdateStorage(contactData){
   alert(contactList.toString());
   localStorage.setItem("ContactList",JSON.stringify(contactList));
 }
+
+const resetForm = () => {
+  setValue('#name','');
+  setValue('#address','');
+  setSelectedIndex('#city',0);
+  setSelectedIndex('#state',0);
+  setValue('#zip','');
+  setValue('#phone','');
+  setValue('#email','');
+  let listOfErrors = ['.name-error','.address-error','.phone-error','.email-error','.zip-error'];
+  listOfErrors.forEach(errorElement => {
+    setErrorText(errorElement,"");
+  });
+}
+
+const setValue = (id,value) => {
+const element = document.querySelector(id);
+element.value = value;
+}
+
+const setSelectedIndex = (id,index) => {
+const element = document.querySelector(id);
+element.selectedIndex = index;
+}
