@@ -204,4 +204,10 @@ error-output {
 .submit-button-disabled:hover{
     cursor: not-allowed;
 }
-
+.reset-button:hover {
+    background: #707070 0% 0% no-repeat padding-box;
+    border: 1px solid #969696;
+    border-radius: 5px;
+    opacity: 1;
+    color: white;
+}
